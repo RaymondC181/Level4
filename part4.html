@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("images/potion.png");
+            background-repeat: no-repeat;
+            background-color: light gray;
+            background-size: 250px;
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        h1{
+            margin-left:20px;
+            font:bold 50pt calibri;
+        }
+        span{
+            font:20pt arial black;
+        }
+        h1 span{
+            border:1px solid #dddddd;
+            border-radius: 10px;
+            background-color: #dddddd;
+            padding: 5px;
+            box-shadow:3px 3px 6px 3px black;
+            font: bold 50pt calibri; 
+        }
+        hr{
+            width: 80%;
+            margin:20px auto;
+        }
+        form{
+            display:inline;
+        }
+        input{
+            width: 50px;
+        }
+        input, button{
+            font: 16pt calibri;
+        }
+
+        p{
+            text-align: center;
+            font: 20pt arial;
+        }
+
+        .box{
+            font: 16pt calibri;
+            border: thick solid #dddddd;
+            border-radius: 10px;
+            width: 500px;
+            margin-left: 200px;
+            padding: 20px;
+            background-color: #dddddd;
+            box-shadow: 5px 5px 10px 8px black;
+        }
+    </style>
+    <script src="alchemy.js"></script>
+    <script>
+        function initialize()
+        {
+           myOrganismsOutput = document.getElementById("orgs"); 
+           firstSelectionOutput = document.getElementById("1st");
+           secondSelectionOutput = document.getElementById("2nd");
+            organismForm = document.getElementById("orgsform");
+
+            myOrganism = [ORGANISM_LIST[0], ORGANISM_LIST[1], 
+                ORGANISM_LIST[2], ORGANISM_LIST[3]];
+            firstSelection = NONE;
+            secondSelection = NONE; 
+
+            display(); 
+        }
+    </script>
+</head>
+<body onload = "initialize();">
+    <h1>
+        <span>Alchemy</span>
+    </h1>
+    <div class="box">
+        <h2>My organisms</h2>
+        <div id="orgs"></div>
+        <hr/>
+        <form id="orgsform">
+            <input type="number" name="orgsel">
+        </form>
+        <button onclick = "selectOrganism();">Select organisms</button>
+        <button onclick = "deleteOrganism();">Delete organisms</button>
+    </div>
+
+    <hr/>
+
+    <p>
+        <span id="1st"></span>AND<span id="2nd"></span>
+    </p>
+</body>
+</html>
